@@ -4,8 +4,6 @@ data <- read.csv("household_power_consumption.txt", sep=";", header=TRUE)
 data <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007",]
 
 convertedData <- data
-convertedData$Time <- strptime(data$Time, format="%H:%M:%S")
-convertedData$Date <- as.Date(data$Date)
 convertedData$Global_active_power <- as.numeric(levels(data$Global_active_power))[data$Global_active_power]
 
 subset <- convertedData[!is.na(convertedData$Global_active_power),]
