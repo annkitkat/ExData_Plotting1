@@ -1,5 +1,3 @@
-setwd("C:/Users/Annika/Projekte/ExData_Plotting1")
-
 data <- read.csv("household_power_consumption.txt", sep=";", header=TRUE)
 data <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007",]
 
@@ -13,7 +11,6 @@ convertedData$Sub_metering_3 <- as.numeric(levels(data$Sub_metering_3))[data$Sub
 convertedData$Global_active_power <- as.numeric(levels(data$Global_active_power))[data$Global_active_power]
 convertedData$Global_reactive_power <- as.numeric(levels(data$Global_reactive_power))[data$Global_reactive_power]
 convertedData$Voltage <- as.numeric(levels(data$Voltage))[data$Voltage]
-
 
 png(filename="plot4.png")
 par(mfrow=c(2,2))
