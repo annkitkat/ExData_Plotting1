@@ -7,6 +7,7 @@ convertedData$Sub_metering_1 <- as.numeric(levels(data$Sub_metering_1))[data$Sub
 convertedData$Sub_metering_2 <- as.numeric(levels(data$Sub_metering_2))[data$Sub_metering_2]
 convertedData$Sub_metering_3 <- as.numeric(levels(data$Sub_metering_3))[data$Sub_metering_3]
 
+# Please note (!): since the systems language is german the labels for the x axis are Do, Fr and Sa instead of Thu, Fri and Sat. 
 png(filename="plot3.png")
 plot(convertedData$DateTime, convertedData$Sub_metering_1, type="l", ylim=range(c(0,38)), main="", xlab="", ylab="Energy sub metering")
 lines(x=convertedData$DateTime, y=convertedData$Sub_metering_2, col="red")
